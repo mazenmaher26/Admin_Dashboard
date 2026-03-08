@@ -226,7 +226,7 @@ elif selected == "Reviews":
     r1, r2, r3 = st.columns(3)
     r1.metric("Total Reviews", df_filtered['Reviews'].sum())
     r2.metric("Positive Sentiment", "78%", "3%")
-    r3.metric("Deleted", 12)
+    r3.metric("Deleted Reviews", 12)
     
     r1, r2 = st.columns(2)
     with r1:
@@ -298,4 +298,5 @@ elif selected == "Location Logic":
         st.plotly_chart(px.bar(dist_counts, x='count', y='District', orientation='h', title="Most Active Districts"), use_container_width=True)
     with col2:
         st.success("📍 Opportunity Found: 'New Beni Suef' district has high search volume for Pharmacies but 0 registered.")
+
         st.info("📍 Activity Alert: 'Nile Corniche' area has the highest concentration of Direction Clicks.")
