@@ -208,6 +208,10 @@ elif selected == "Places Analytics":
 # =========================
 elif selected == "User Analytics":
     st.title("👥 User Analytics")
+    u1, u2 = st.columns(2)
+    u1.metric("New Users (This Period)", df_filtered['New_Users'].sum())
+    u2.metric("Suspended/Banned Users", 84)
+
     st.subheader("Platform User Growth Trend")
     fig_u = px.area(df_filtered, x='Date', y='New_Users', color_discrete_sequence=['#2563EB'])
     st.plotly_chart(fig_u, use_container_width=True)
@@ -286,6 +290,7 @@ elif selected == "Location Logic":
     with col2:
         st.success("📍 Opportunity Found: 'New Beni Suef' district has high search volume for Pharmacies but 0 registered.")
         st.info("📍 Activity Alert: 'Nile Corniche' area has the highest concentration of Direction Clicks.")
+
 
 
 
