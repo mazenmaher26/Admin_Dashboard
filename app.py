@@ -168,7 +168,7 @@ if selected == "Overview":
         st.plotly_chart(fig_v, use_container_width=True)
 
     col_c = st.columns([1])
-    with col_c:
+    col_c:
         st.subheader("🛡️ Content Status")
         fig_st = px.pie(df_places, names='Status', hole=0.6, color_discrete_sequence=['#10B981', '#EF4444', '#F59E0B'])
         st.plotly_chart(fig_st, use_container_width=True)
@@ -278,5 +278,6 @@ elif selected == "Location Logic":
     with col2:
         st.success("📍 Opportunity Found: 'New Beni Suef' district has high search volume for Pharmacies but 0 registered.")
         st.info("📍 Activity Alert: 'Nile Corniche' area has the highest concentration of Direction Clicks.")
+
 
 
