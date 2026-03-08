@@ -161,7 +161,9 @@ if selected == "Overview":
         heat_data[:, 18:22] += 60 # Peak evening activity
         fig_heat = px.imshow(heat_data, x=hours, y=days, color_continuous_scale='Blues', aspect="auto")
         st.plotly_chart(fig_heat, use_container_width=True)
-
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
     with col_b:
         st.subheader("🚀 Signup Velocity")
         fig_v = px.bar(df_filtered, x='Date', y=['New_Users', 'New_Owners'], barmode='group', color_discrete_sequence=['#2563EB', '#F59E0B'])
@@ -280,6 +282,7 @@ elif selected == "Location Logic":
     with col2:
         st.success("📍 Opportunity Found: 'New Beni Suef' district has high search volume for Pharmacies but 0 registered.")
         st.info("📍 Activity Alert: 'Nile Corniche' area has the highest concentration of Direction Clicks.")
+
 
 
 
